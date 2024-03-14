@@ -1,5 +1,5 @@
-# Using Fedora 37 as base image to support rpmbuild (packages will be Dist fc37)
-FROM fedora:37
+# Using Fedora 39 as base image to support rpmbuild (packages will be Dist fc37)
+FROM fedora:39
 
 # Copying all contents of rpmbuild repo inside container
 COPY . .
@@ -10,7 +10,7 @@ RUN yum install -y rpm-build rpmdevtools gcc make coreutils python git dnf "dnf-
 
 # Setting up node to run our JS file
 # Download Node Linux binary
-RUN curl -O https://nodejs.org/dist/v12.16.1/node-v12.16.1-linux-x64.tar.xz
+RUN curl -O https://nodejs.org/dist/v20.11.1/node-v20.11.1-linux-x64.tar.xz
 
 # Extract and install
 RUN tar --strip-components 1 -xvf node-v* -C /usr/local
